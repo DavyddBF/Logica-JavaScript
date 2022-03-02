@@ -1,0 +1,61 @@
+<meta charset="UTF-8">
+
+<script>
+    function pulaLinha() {
+
+        document.write("<br><br>");
+    }
+
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function imc(altura, peso) {
+        return peso / (altura * altura)
+    }
+
+    var nome = prompt("Informe seu nome: (exemplo: José)");
+    var altura = prompt(nome + ", informe sua altura: (exemplo: 1.75)");
+    var peso = prompt(nome + ", informe seu peso: (exemplo: 72)");
+    var imcTotal = imc(altura, peso);
+
+    mostra(nome + ", o total do seu IMC é; " + Math.round(imcTotal));
+
+    if(imcTotal < 18.5) {
+
+        mostra("Seu IMC está classificado como: MAGREZA. O seu grau de obesidade é 0.");
+        
+        mostra("Você está um pouco abaixo do peso ideal " + nome + "! O que acha de aumentar um pouco de peso?");
+    }
+
+    if(imcTotal >= 18.6 && imcTotal <= 24.9) {
+        
+        mostra("Seu IMC está classificado como: NORMAL. O seu grau de obesidade é 0.");
+        
+        mostra("Parabéns " + nome + "!! Seu peso está ideal, totalmente perfeito!!");
+    }
+
+    if(imcTotal >= 25 && imcTotal <= 29.9) {
+        
+        mostra("Seu IMC está classificado como: SOBREPESO. O seu grau de obesidade é 1.");
+        
+        mostra("Você está um pouco acima do peso ideal! Por favor " + nome + "!! Considere se esforçar em ficar no peso ideal 'normal'!");
+    }
+
+    if(imcTotal >= 30 && imcTotal <= 39.9) {
+        
+        mostra("Seu IMC está classificado como: OBESIDADE. O seu grau de obesidade é 2.");
+        
+        mostra("Você está acima do muito acima do peso " + nome + "! Recomendamos uma dieta para chegar no peso 'ideal'");
+    }
+
+    if(imcTotal >= 40 && imcTotal <= 49.9) {
+        
+        mostra("Seu IMC está classificado como: OBESIDADE GRAVE. O seu grau de obesidade é 3.");
+        
+        mostra("Você precisa urgentemente de uma dieta " + nome + "!! Seu peso está muito alto e grave!!");
+    }
+
+</script>

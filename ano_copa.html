@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+        document.write("<br><br>")
+    }
+
+    function mostrarTxt(text) {
+        document.write(text);
+        pulaLinha();
+    }
+
+    var limite = parseInt(prompt("Entre com a data limite"));
+    var anoCopa = 1930;
+
+    while(anoCopa <= limite){
+
+        mostrarTxt("Teve copa em " + anoCopa);
+        anoCopa = anoCopa + 4;
+    }
+
+    mostrarTxt("FIM");
+
+</script>

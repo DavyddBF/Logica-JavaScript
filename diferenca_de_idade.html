@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+        // pulando duas linhas
+        document.write("<br><hr><br>")
+    }
+
+    function mostra(texto) {
+        document.write("<big>" + texto + "</big>");
+        pulaLinha();
+    }
+
+    var nomeRodrigo = ("Rodrigo");
+    var nomeDavyd = ("Davyd");
+    var idadeRodrigo = 25;
+    var idadeDavyd = 16;
+    var diferencaDaIdade = idadeRodrigo - idadeDavyd;
+
+    mostra("A diferença de idade do " + nomeRodrigo + " e do " + nomeDavyd + " é....");
+    mostra(diferencaDaIdade);
+
+</script>

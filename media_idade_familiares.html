@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+        document.write("<br><br>")
+    }
+
+    function mostrarTxt(text) {
+        document.write(text);
+        pulaLinha();
+    }
+    
+    var totalFamiliares = parseInt(prompt("Quanto familiares há?"));    // "parseInt" transforma a variável em número e prompt abre window.
+    //salva número de familiares ditados pelo usuário.
+
+    var idade = 1;  // variável para a quantidade de familiares
+    var totalDeIdades = 0;
+    // chama While, que vê se a variável "idade" é menor igual que o número passado pelo usuário na variável "totalFamiliares".
+    while(idade <= totalFamiliares) {
+       
+        // repete sempre que der menos ou igual ao número passo pela variável "totalFamiliares". Se der mais, a repetição é parada
+        var idadeDoFamiliar = parseInt(prompt("Quantos anos tem seu familiar?")); 
+        totalDeIdades = totalDeIdades + idadeDoFamiliar;
+        idade++;
+    }
+
+    var mediaDasIdades = totalDeIdades/totalFamiliares; // totalFamiliares é usado para dividir o tanto de pessoas citadadas
+    mostrarTxt("A média de idade da Familia é " + mediaDasIdades);
+
+    mostrarTxt("FIM");
+
+</script>

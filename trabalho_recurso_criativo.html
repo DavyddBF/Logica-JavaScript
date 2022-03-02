@@ -1,0 +1,106 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+        document.write("<br><br>");
+    }
+
+    function mostra(texto) {
+        document.write(texto);
+        pulaLinha();
+    }
+
+    alert("Bem-Vinda professora!! Este é um jogo de questões WEB que eu mesmo programei! O resultado de como você for, sairá logo no final do jogo \n (Clique em 'OK' para prosseguir)");
+    alert("Ta simples pois fui irresponsável e fui fazer o trabalho no ultimo dia... Então só vai ter 4 questões para responder.");
+    alert("Vou colocar as opções numa mesma janela como esta. ");
+    alert("Antes temos que lembrar que: Mesopotâmia foi o nome da região localizada entre os rios Tigre e Eufrates, no Oriente Médio, principalmente onde hoje se concentra o Iraque.");
+
+    var nome = prompt("Informe antes de tudo o seu nome: ");
+    var primeiraQuest = parseInt(prompt("PRIMEIRA QUESTÃO \n \n " + nome + ", qual era o povo que habitava a região norte da Mesopotâmia? \n \n (1) Assírios \n (2) Caldeus \n (3) Amoritas \n \n (Dica: está no meu trabalho entregue!!) "));
+    var segundaQuest = parseInt(prompt("SEGUNDA QUESTÃO \n \n" + nome + ", sobre a cultura da Mesopotâmia: \n \n Eles eram POLITEÍSTAS? \n \n (1) Claro que não! \n (2) Sem sombra de dúvidas... SIM"));
+    var terceiraQuest = parseInt(prompt("TERCEIRA QUESTÃO \n \n A economia dos povos mesopotâmicos, tendo grande semelhança com o Egito, era sustentada pelo o que? \n \n (1) Produção pelas Máquinas \n (2) Produção agrícula \n (3) Produção de minérios "));
+    var quartaQuest = parseInt(prompt("QUARTA E ULTIMA QUESTÃO \n \n Qual era a religião do povo mesopotâmio? \n \n (1) Os mesopotâmicos eram politeístas. Na Mesopotâmia, um incontável panteão de deuses e semideuses fazia parte da religião. \n (2) Eles tinham religião? \n (3) Católicos \n (4) Testemunhas de Jeová"));
+
+    alert("Bom " + nome + "... Como você foi? Vamos ver? Clique em 'OK'");
+
+    if(primeiraQuest == 1) {
+        mostra("Parabéns!!  Você acertou a primeira questão, onde sua resposta foi: " + primeiraQuest);
+    } else {
+        mostra("Que pena... Infelizmente você errou a primeira questão. A resposta correta era: (1) Assírios");
+    }
+
+    if(segundaQuest == 2) {
+        mostra("Parabéns!! Sua resposta da 2° questão que foi: (" + segundaQuest + ") Está correta!!");
+    } else {
+       mostra("Infelizmente você errou a 2° questão! O correto era a (2).");
+    }
+
+    if(terceiraQuest == 2) {
+        mostra("Parabéns!! Você acertou a 3° questão onde sua resposta foi: " + terceiraQuest);
+    } else {
+        mostra("Que pena!! Infelizmente você errou a questão 3. A resposta correta era 2 e não " + terceiraQuest);
+    }
+
+    if(quartaQuest == 1) {
+        mostra("Parabéns você acertou a 4° questão!! Sua resposta: " + quartaQuest + ", estava certissima!!");
+    } else {
+        mostra("Poxa, infelizmente você acabou errando a questão. A resposta era 1 e não " + quartaQuest);
+    }
+
+    document.write("Eai gostou? Bom, eu ainda estou melhorando. Estou fazendo um curso de programador e quero ficar bom e treinar. E como teria que ser criativo decidi criar um programa por JavaScrip (Uma linguagem de programação...).");
+    document.write("<br>");
+    document.write("Até a proxima aula " + nome + "!!");
+
+
+</script>
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+var tela = document.querySelector('canvas');
+var pincel = tela.getContext('2d');
+
+pincel.fillStyle = 'lightgrey';
+pincel.fillRect(0, 0, 600, 400);
+
+function desenhaCirculo(x, y, raio) {
+
+    pincel.fillStyle = 'blue';
+    pincel.beginPath();
+    pincel.arc(x, y, raio, 0, 2 * Math.PI);
+    pincel.fill();
+}
+
+function limpaTela() {
+
+    pincel.clearRect(0, 0, 600, 400);
+}
+
+var x = 20;
+var sentido = 1;
+
+function atualizaTela() {
+
+    limpaTela();
+    
+    if( x > 600) {
+
+        sentido = -1;
+    } else  if(x < 0) {
+
+        sentido = 1;
+    }
+
+    desenhaCirculo(x ,20, 10);
+
+    x = x + sentido;
+}
+
+setInterval(atualizaTela, 5);
+
+
+
+</script>
+
